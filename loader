@@ -1,0 +1,25 @@
+local PlaceId = game.GameId
+
+local TDS_PlaceId = 1176784616
+local MM2_PlaceId = 66654135
+
+local TDS_RawUrl = "https://raw.githubusercontent.com/ars240/256Hub/refs/heads/main/TDS"
+local MM2_RawUrl = "https://raw.githubusercontent.com/ars240/256Hub/refs/heads/main/MM2"
+
+if PlaceId == TDS_PlaceId then
+    pcall(function()
+        loadstring(game:HttpGet(TDS_RawUrl))()
+    end)
+elseif PlaceId == MM2_PlaceId then
+    pcall(function()
+        loadstring(game:HttpGet(MM2_RawUrl))()
+    end)
+else
+    pcall(function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "256HUB",
+            Text = "This game is not supported!",
+            Duration = 3
+        })
+    end)
+end
